@@ -15,6 +15,8 @@ import registerServiceWorker from './registerServiceWorker';
 //  CLEAR_DATA -> Clears the store data for a new set of inputs
 const userFeedback = (state = [], action) => {
     if(action.type === 'ADD_USER_INPUT') {
+        console.log('action payload:', action.payload);
+        console.log('userFeedback:', userFeedback);
         return [...state, action.payload];
     }   //  end if
     else if(action.type === 'CLEAR_DATA') {
