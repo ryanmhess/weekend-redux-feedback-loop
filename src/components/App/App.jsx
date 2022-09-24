@@ -4,6 +4,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 
 import './App.css';
 import Header from '../Header/Header';
+import Main from '../Main/Main';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
@@ -16,6 +17,7 @@ function App() {
     <div className='App'>
       <Router>
         <Header />
+          <Main />
         <Route exact path="/feeling">
           <Feeling />
         </Route>
