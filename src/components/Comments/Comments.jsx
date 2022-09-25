@@ -1,25 +1,28 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom'
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
+
+import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
 
 function Comments() {
 
     const dispatch = useDispatch();
     const history = useHistory();
-    const [comments, setComments] = useState('');
+    const [commentIn, setComments] = useState();
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log('comments Rating:', comments);
+        console.log('comments Rating:', commentIn);
+        let comments = commentIn;
+        if(!comments){
+            comments = "No comment.";
+        }
         const action = {
             type: 'ADD_USER_INPUT',
             payload: { comments }
@@ -37,27 +40,26 @@ function Comments() {
     }
 
     return(
-        <>
-            <Typography gutterBottom variant="h5">Please write down any thoughts you may want to share:</Typography>
+        <Paper elevation={13} style={{maxWidth:650, margin:"0 auto", padding:"20px 5px"}}>
             <form onSubmit={handleSubmit}>
-                <FormControl>
-                    <FormLabel id="demo-row-radio-buttons-group-label">Rating</FormLabel>
-                    <RadioGroup row aria-labelledby="demo-row-radio-buttons-group-label" name="row-radio-buttons-group">
-                        <FormControlLabel value="1" control={<Radio required/>} label="1" onChange={(event) => setComments(event.target.value)}/>
-                        <FormControlLabel value="2" control={<Radio  />} label="2" onChange={(event) => setComments(event.target.value)}/>
-                        <FormControlLabel value="3" control={<Radio  />} label="3" onChange={(event) => setComments(event.target.value)}/>
-                        <FormControlLabel value="4" control={<Radio  />} label="4" onChange={(event) => setComments(event.target.value)}/>
-                        <FormControlLabel value="5" control={<Radio  />} label="5" onChange={(event) => setComments(event.target.value)}/>
-                    </RadioGroup>
-                </FormControl>
-                <Button disabled onClick={backPage} variant="contained" startIcon={<ArrowBackIosRoundedIcon />}>
-                    Back
-                </Button>
-                <Button type="submit" variant="contained" endIcon={<ArrowForwardIosRoundedIcon />}>
-                    Next
-                </Button>
+                <Grid container spacing={2}>
+                    <Grid xs={12} item>
+                    <Typography gutterBottom variant="h5">Please write down any thoughts you may want to share:</Typography>
+                    </Grid>
+                    <Grid xs={12} item>
+                    <TextField sx={{ width: '50ch'}} id="outlined-multiline-flexible" label="Thoughts to share." multiline maxRows={5} value={commentIn} onChange={(event) => setComments(event.target.value)}/>
+                    </Grid>
+                    <Grid xs={12} item>
+                        <Button disabled onClick={backPage} variant="contained" startIcon={<ArrowBackIosRoundedIcon />}>
+                            Back
+                        </Button>
+                        <Button type="submit" variant="contained" endIcon={<ArrowForwardIosRoundedIcon />}>
+                            Next
+                        </Button>
+                    </Grid>
+                </Grid>
             </form>
-        </>
+        </Paper>
     )
 }
 
