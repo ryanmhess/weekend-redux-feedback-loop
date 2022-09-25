@@ -36,7 +36,7 @@ function Comments() {
     }
 
     const backPage = () => {
-        history.push('/supported');
+        history.push('/support');
     }
 
     return(

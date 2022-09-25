@@ -32,7 +32,7 @@ function Understanding() {
     }
 
     const nextPage = () => {
-        history.push('/supported');
+        history.push('/support');
     }
 
     const backPage = () => {
@@ -44,10 +44,10 @@ function Understanding() {
             <form onSubmit={handleSubmit}>
                 <Grid container spacing={2}>
                     <Grid xs={12} item>
-                        <Typography gutterBottom variant="h5">Please share how well you are understanding the content:</Typography>
+                        <Typography variant="h5">Please share how well you are understanding the content:</Typography>
                     </Grid>
                     <Grid xs={12} item>
-                        <Typography gutterBottom color="textSecondary" variant="body2" component="p">(Rating from 1 to 5 with 5 being highly satisfied and 1 being the highly dissatisfied)</Typography>
+                        <Typography color="textSecondary" variant="body2" component="p">(1 being the highly dissatisfied and 5 being highly satisfied)</Typography>
                     </Grid>
                     <Grid xs={12} item>
                         <FormControl>

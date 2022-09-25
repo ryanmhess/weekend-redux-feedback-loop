@@ -7,9 +7,10 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
-import Supported from '../Supported/Supported';
+import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import Complete from '../Complete/Complete';
 import Footer from '../Footer/Footer';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -38,14 +39,17 @@ function App() {
           <Route exact path="/understanding">
             <Understanding />
           </Route>
-          <Route exact path="/supported">
-            <Supported />
+          <Route exact path="/support">
+            <Support />
           </Route>
           <Route exact path="/comments">
             <Comments />
           </Route>
           <Route exact path="/review">
             <Review />
+          </Route>
+          <Route exact path="/complete">
+            <Complete />
           </Route>
           {/* <Footer /> */}
         </Router>

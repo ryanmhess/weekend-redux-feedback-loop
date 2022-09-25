@@ -14,18 +14,18 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
-function Supported() {
+function Support() {
 
     const dispatch = useDispatch();
     const history = useHistory();
-    const [supported, setSupported] = useState();
+    const [support, setSupport] = useState();
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log('supported Rating:', supported);
+        console.log('support Rating:', support);
         const action = {
             type: 'ADD_USER_INPUT',
-            payload: { supported }
+            payload: { support }
         };
         dispatch(action);
         nextPage();
@@ -44,20 +44,20 @@ function Supported() {
             <form onSubmit={handleSubmit}>
                 <Grid container spacing={2}>
                     <Grid xs={12} item>
-                        <Typography gutterBottom variant="h5">Please share how well you feel you are being supported:</Typography>
+                        <Typography variant="h5">Please share how well you feel you are being supported:</Typography>
                     </Grid>
                     <Grid xs={12} item>
-                        <Typography gutterBottom color="textSecondary" variant="body2" component="p">(Rating from 1 to 5 with 5 being highly satisfied and 1 being the highly dissatisfied)</Typography>
+                        <Typography color="textSecondary" variant="body2" component="p">(1 being the highly dissatisfied and 5 being highly satisfied)</Typography>
                     </Grid>
                     <Grid xs={12} item>
                         <FormControl>
                             <FormLabel id="demo-row-radio-buttons-group-label"></FormLabel>
                             <RadioGroup row aria-labelledby="demo-row-radio-buttons-group-label" name="row-radio-buttons-group">
-                                <FormControlLabel value="Highly Dissatisfied" control={<Radio required/>} label="1" labelPlacement="bottom" onChange={(event) => setSupported(event.target.value)}/>
-                                <FormControlLabel value="Dissatisfied" control={<Radio  />} label="2" labelPlacement="bottom" onChange={(event) => setSupported(event.target.value)}/>
-                                <FormControlLabel value="Neutral" control={<Radio  />} label="3" labelPlacement="bottom" onChange={(event) => setSupported(event.target.value)}/>
-                                <FormControlLabel value="Satisfied" control={<Radio  />} label="4" labelPlacement="bottom" onChange={(event) => setSupported(event.target.value)}/>
-                                <FormControlLabel value="Highly Satisfied" control={<Radio  />} label="5" labelPlacement="bottom" onChange={(event) => setSupported(event.target.value)}/>
+                                <FormControlLabel value="Highly Dissatisfied" control={<Radio required/>} label="1" labelPlacement="bottom" onChange={(event) => setSupport(event.target.value)}/>
+                                <FormControlLabel value="Dissatisfied" control={<Radio  />} label="2" labelPlacement="bottom" onChange={(event) => setSupport(event.target.value)}/>
+                                <FormControlLabel value="Neutral" control={<Radio  />} label="3" labelPlacement="bottom" onChange={(event) => setSupport(event.target.value)}/>
+                                <FormControlLabel value="Satisfied" control={<Radio  />} label="4" labelPlacement="bottom" onChange={(event) => setSupport(event.target.value)}/>
+                                <FormControlLabel value="Highly Satisfied" control={<Radio  />} label="5" labelPlacement="bottom" onChange={(event) => setSupport(event.target.value)}/>
                             </RadioGroup>
                         </FormControl>
                     </Grid>
@@ -75,4 +75,4 @@ function Supported() {
     )
 }
 
-export default Supported;
+export default Support;
