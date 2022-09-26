@@ -3,11 +3,15 @@
 }
 
 .App-header {
-  background-color: #033076;
-  min-height: 70px;
-  padding: 20px;
-  color: white;
-  margin-bottom: 20px;
+  /* min-height: 70px; */
+  color: #edf0f1;
+  box-sizing: border-box;
+  margin: 10px 0;
+  padding: 0 80px 0 10px;
+  background-color: #24252A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .App-title {
@@ -20,4 +24,49 @@
 
 h4 {
   font-style: italic;
+}
+
+a img:last-child {
+  display: none;  
+}
+a:hover img:last-child {
+  display: block;  
+}
+a:hover img:first-child {
+  display: none;  
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
 }
