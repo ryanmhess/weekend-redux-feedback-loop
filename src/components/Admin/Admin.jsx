@@ -9,7 +9,7 @@ import InventoryIcon from '@mui/icons-material/Inventory';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import CottageIcon from '@mui/icons-material/Cottage';
 
-function Main() {
+function Admin() {
 
     const actions = [
         { icon: <Link to='/'><CottageIcon /></Link>, name: 'Home' },
@@ -23,35 +23,11 @@ function Main() {
             <SpeedDial ariaLabel="SpeedDial basic example" direction="down" sx={{ position: 'absolute', top: 125, left: 10 }} icon={<SpeedDialIcon />}>
                 {actions.map((action) => (
                 <SpeedDialAction key={action.name} icon={action.icon} tooltipTitle={action.name}/> ))}
-            </SpeedDial>      
-            <div className="row">
-                <div className="column">
-                    <img src="./images/mb.webp"/>
-                    <img src="./images/cl.webp"/>
-                    <img src="./images/ds.webp"/>
-                </div>
-                <div className="column">
-                    <img src="./images/bs.jpeg"/>
-                    <a>
-                        <img src="./images/goat_small.jpg"/>
-                        <img src="./images/cb.webp"/>
-                    </a>
-                    
-                    <img src="./images/mm.webp"/>
-                </div>
-                <div className="column">
-                    <img src="./images/es.jpeg"/>
-                    <img src="./images/es.webp"/>
-                    <img src="./images/ks.webp"/>
-                </div>
-                <div className="column">
-                    <img src="./images/lk.webp"/>
-                    <img src="./images/bk.webp"/>
-                    <img src="./images/mh.webp"/>
-                </div>
-            </div>
+            </SpeedDial>
+            <h1>ADMIN</h1>
+            <h2>Under Construction.</h2>    
         </Paper>
     )
 }
 
-export default Main;
+export default Admin;

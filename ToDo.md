@@ -2,22 +2,24 @@
     [✅]: Setup
 
 ## Components ##
-    [ ]: <Header />
-    [ ]: <Feeling />
-    [ ]: <Understanding />
-    [ ]: <Supported />
-    [ ]: <Comments />
-    [ ]: <Review />
-    [ ]: <SubmissionSuccess />
+    [✅]: <Header />
+    [✅]: <Feeling />
+    [✅]: <Understanding />
+    [✅]: <Support />
+    [✅]: <Comments />
+    [✅]: <Review />
+    [✅]: <Complete />
+    [✅]: <Main />
+    [ ]: <History />
 
 ## Components - Stretch ##
     [ ]: <Admin />       
-    [ ]: <NavBar />
+
 
 ## Functionality ##
-    [ ]: Inputs required
-    [ ]: Button navigation to next page
-    [ ]: Complete Button pushes data to server, clears store and navigates to page 1
+    [✅]: Inputs required
+    [✅]: Button navigation to next page
+    [✅]: Complete Button pushes data to server, clears store and navigates to page 1
 
 ## Functionality - Stretch ##
     [ ]: Button navigate to previous page and can modify
@@ -26,4 +28,4 @@
         [ ]: Flag entry
 
 ## Styling ##
-    [ ]: Make it look good
+    [✅]: Make it look good

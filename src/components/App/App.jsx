@@ -12,7 +12,8 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import Complete from '../Complete/Complete';
-import Footer from '../Footer/Footer';
+import History from '../History/History';
+import Admin from '../Admin/Admin';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -122,7 +123,12 @@ function App() {
           <Route exact path="/complete">
             <Complete />
           </Route>
-          {/* <Footer /> */}
+          <Route exact path="/history">
+            <History />
+          </Route>
+          <Route exact path="/admin">
+            <Admin />
+          </Route>
         </Router>
       </ThemeProvider>
     </div>
